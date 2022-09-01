@@ -1,5 +1,38 @@
 import { Vector } from "../vector";
 
+describe("equal with 2 and 3 dimensions", () => {
+
+    test("equal value 2D", () => {
+        const vector = new Vector(5, 8);
+        vector.equal(5);
+        const vectorResult = new Vector(5, 5, 5);
+        Object.is(vector, vectorResult);
+    });
+
+    test("equal value 3D", () => {
+        const vector = new Vector(5, 8, 10);
+        vector.equal(5);
+        const vectorResult = new Vector(5, 5, 5);
+        Object.is(vector, vectorResult);
+    });
+
+    test("equal vector", () => {
+        const vector = new Vector(1, 2);
+        const vector2 = new Vector(3, 4);
+        vector.equal(vector2);
+        
+        Object.is(vector, vector2);
+    });
+
+    test("equal vector 3D", () => {
+        const vector = new Vector(1, 2, 5);
+        const vector2 = new Vector(3, 4, 2);
+        vector.equal(vector2);
+        ;
+        Object.is(vector, vector2);
+    });
+});
+
 describe("add with 2 and 3 dimensions", () => {
 
     test("add value 2D", () => {

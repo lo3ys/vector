@@ -11,6 +11,27 @@ class Vector {
         this.z = (z)?(z):(null);
     }
 
+    public equal(value: number): Vector;
+    public equal(vector: Vector): Vector;
+    public equal(value: any): Vector{
+        if (typeof value == "number")
+        {
+            this.x = value;
+            this.y = value;
+            if (this.z) this.z = value;
+            return this;
+        }
+        
+         if (value instanceof Vector)
+        {
+            this.x = value.x;
+            this.y = value.y;
+            if (this.z && value.z) this.z = value.z;
+            return this;
+        }
+        throw new Error("Types not matching")
+    }  
+
     public add(value: number): Vector;
     public add(vector: Vector): Vector;
     public add(value: any): Vector{
@@ -21,7 +42,7 @@ class Vector {
             if (this.z) this.z += value;
             return this;
         }
-        else if (value instanceof Vector)
+        if (value instanceof Vector)
         {
             this.x += value.x;
             this.y += value.y;
@@ -41,7 +62,7 @@ class Vector {
             if (this.z) this.z -= value;
             return this;
         }
-        else if (value instanceof Vector)
+        if (value instanceof Vector)
         {
             this.x -= value.x;
             this.y -= value.y;
@@ -61,7 +82,7 @@ class Vector {
             if (this.z) this.z *= value;
             return this;
         }
-        else if (value instanceof Vector)
+        if (value instanceof Vector)
         {
             this.x *= value.x;
             this.y *= value.y;
@@ -81,7 +102,7 @@ class Vector {
             if (this.z) this.z /= value;
             return this;
         }
-        else if (value instanceof Vector)
+        if (value instanceof Vector)
         {
             this.x /= value.x;
             this.y /= value.y;
