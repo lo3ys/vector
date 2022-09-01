@@ -1,3 +1,5 @@
 src
 tsconfig.json
+.eslintrc.json
+.prettierrc
 “files”: [“lib/**/*”]
