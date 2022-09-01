@@ -1,0 +1,29 @@
+{
+  "name": "vector",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "test:cov": "jest --config jestconfig.json --coverage",
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netscape-swega/vector.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "bugs": {
+    "url": "https://github.com/netscape-swega/vector/issues"
+  },
+  "homepage": "https://github.com/netscape-swega/vector#readme",
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "jest": "^28.1.3",
+    "ts-jest": "^28.0.8",
+    "typescript": "^4.8.2"
+  }
+}
