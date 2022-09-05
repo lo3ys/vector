@@ -9,95 +9,103 @@ class Vector {
     this.z = z ? z : null;
   }
 
+  // public same(value: number): Vector;
+  // public same(vector: Vector): Vector;
+  // public same(value: any): Vector {
+  //   if (typeof value == 'number') {
+  //     this.x = value;
+  //     this.y = value;
+  //     if (this.z) this.z = value;
+  //     return this;
+  //   }
+
+  //   if (value instanceof Vector) {
+  //     this.x = value.x;
+  //     this.y = value.y;
+  //     if (this.z && value.z) this.z = value.z;
+  //     return this;
+  //   }
+  //   throw new Error('Types not matching');
+  // }
+
   public equal(value: number): Vector;
   public equal(vector: Vector): Vector;
-  public equal(value: any): Vector {
-    if (typeof value == 'number') {
-      this.x = value;
-      this.y = value;
-      if (this.z) this.z = value;
-      return this;
-    }
-
+  public equal(value: number | Vector): Vector {
     if (value instanceof Vector) {
       this.x = value.x;
       this.y = value.y;
       if (this.z && value.z) this.z = value.z;
       return this;
     }
-    throw new Error('Types not matching');
+
+    this.x = value;
+    this.y = value;
+    if (this.z) this.z = value;
+    return this;
   }
 
   public add(value: number): Vector;
   public add(vector: Vector): Vector;
-  public add(value: any): Vector {
-    if (typeof value == 'number') {
-      this.x += value;
-      this.y += value;
-      if (this.z) this.z += value;
-      return this;
-    }
+  public add(value: number | Vector): Vector {
     if (value instanceof Vector) {
       this.x += value.x;
       this.y += value.y;
       if (this.z && value.z) this.z += value.z;
       return this;
     }
-    throw new Error('Types not matching');
+
+    this.x += value;
+    this.y += value;
+    if (this.z) this.z += value;
+    return this;
   }
 
   public sub(value: number): Vector;
   public sub(vector: Vector): Vector;
-  public sub(value: any): Vector {
-    if (typeof value == 'number') {
-      this.x -= value;
-      this.y -= value;
-      if (this.z) this.z -= value;
-      return this;
-    }
+  public sub(value: number | Vector): Vector {
     if (value instanceof Vector) {
       this.x -= value.x;
       this.y -= value.y;
       if (this.z && value.z) this.z -= value.z;
       return this;
     }
-    throw new Error('Types not matching');
+
+    this.x -= value;
+    this.y -= value;
+    if (this.z) this.z -= value;
+    return this;
   }
 
   public mult(value: number): Vector;
   public mult(vector: Vector): Vector;
-  public mult(value: any): Vector {
-    if (typeof value == 'number') {
-      this.x *= value;
-      this.y *= value;
-      if (this.z) this.z *= value;
-      return this;
-    }
+  public mult(value: number | Vector): Vector {
     if (value instanceof Vector) {
       this.x *= value.x;
       this.y *= value.y;
       if (this.z && value.z) this.z *= value.z;
       return this;
     }
-    throw new Error('Types not matching');
+
+    this.x *= value;
+    this.y *= value;
+    if (this.z) this.z *= value;
+    return this;
   }
 
   public div(value: number): Vector;
   public div(vector: Vector): Vector;
-  public div(value: any): Vector {
-    if (typeof value == 'number') {
-      this.x /= value;
-      this.y /= value;
-      if (this.z) this.z /= value;
-      return this;
-    }
+  public div(value: number | Vector): Vector {
     if (value instanceof Vector) {
       this.x /= value.x;
       this.y /= value.y;
       if (this.z && value.z) this.z /= value.z;
       return this;
     }
-    throw new Error('Types not matching');
+
+    this.x /= value;
+    this.y /= value;
+    if (this.z) this.z /= value;
+    return this;
   }
 
   static random2D(min: number, max: number): Vector {
